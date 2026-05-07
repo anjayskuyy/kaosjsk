@@ -1,10 +1,10 @@
 // ========== GOOGLE SHEETS API CONFIGURATION ==========
 // GANTI DENGAN URL APPS SCRIPT ANDA
 // Cara mendapatkan URL: Deploy Apps Script -> Web App -> Copy URL
-const API_URL = 'https://script.google.com/macros/s/AKfycbzMWu9k8BW0lPVrogO3dgNFD8paNfnDXQ3sdPukqEH4w5FcpLdUeECPglIzLGWpDY8tpw/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbwww0Rvt_F-LDepD7poVOmTne0Yi9ic0bOGaM-ZAcddZR1Xs-TOrHTX_efdE6UmlMRxuw/exec';
 
 // Google Sheets Sheet ID (opsional, untuk debug)
-const SHEET_ID = 'AKfycbzMWu9k8BW0lPVrogO3dgNFD8paNfnDXQ3sdPukqEH4w5FcpLdUeECPglIzLGWpDY8tpw';
+const SHEET_ID = 'AKfycbwww0Rvt_F-LDepD7poVOmTne0Yi9ic0bOGaM-ZAcddZR1Xs-TOrHTX_efdE6UmlMRxuw';
 
 // Status sync
 let isSyncing = false;
