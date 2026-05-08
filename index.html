@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serene Touch - Jasa Pijat Premium Semarang</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <div class="nav-logo">Serene <span>Touch</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Layanan</a></li>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#team">Tim</a></li>
+    <li><a href="#testimonials">Testimoni</a></li>
+    <li><a href="#booking">Booking</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location.href='admin.html'">Admin Panel</button>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="openMobileMenu()">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <button class="nav-close" onclick="closeMobileMenu()">✕</button>
+  <a href="#services" onclick="closeMobileMenu()">Layanan</a>
+  <a href="#about" onclick="closeMobileMenu()">Tentang</a>
+  <a href="#team" onclick="closeMobileMenu()">Tim</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Testimoni</a>
+  <a href="#booking" onclick="closeMobileMenu()">Booking</a>
+  <button class="btn-primary" onclick="closeMobileMenu(); window.location.href='admin.html';">Admin Panel</button>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-tag">✦ Premium Wellness Experience</div>
+    <h1 class="hero-title">Temukan <em>Kedamaian</em><br>Sejati Dalam Sentuhan</h1>
+    <p class="hero-sub">Layanan pijat profesional dengan teknik tradisional dan modern untuk memulihkan tubuh, pikiran, dan jiwa Anda.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">Pesan Sekarang</a>
+      <a href="#services" class="btn-outline">Lihat Layanan</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num" id="stat-customers-count">2,400+</div><div class="stat-label">Pelanggan Puas</div></div>
+  <div class="stat-item"><div class="stat-num" id="stat-therapists-count">12</div><div class="stat-label">Terapis Bersertifikat</div></div>
+  <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">Tahun Pengalaman</div></div>
+  <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">Rating Google</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 1rem;">
+      <div>
+        <div class="section-tag">✦ Layanan Kami</div>
+        <h2 class="section-title">Pilihan <em>Terapi</em> Terbaik<br>Untuk Anda</h2>
+      </div>
+      <p class="section-sub">Setiap sesi dirancang khusus untuk memenuhi kebutuhan unik tubuh dan jiwa Anda, dipandu oleh terapis berpengalaman.</p>
+    </div>
+    <div class="services-grid" id="services-display"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div style="max-width:1200px; margin:0 auto;" class="about-inner">
+    <div class="about-img">
+      <div class="about-img-inner">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="80" stroke="rgba(184,151,90,0.5)" stroke-width="1"/>
+          <circle cx="100" cy="100" r="50" stroke="rgba(184,151,90,0.3)" stroke-width="1"/>
+          <path d="M100 20 L100 180 M20 100 L180 100" stroke="rgba(184,151,90,0.3)" stroke-width="1"/>
+          <circle cx="100" cy="100" r="10" fill="rgba(184,151,90,0.4)"/>
+        </svg>
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">8+</div>
+        <div class="about-badge-text">Tahun Melayani</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-tag" style="color: var(--gold);">✦ Tentang Kami</div>
+      <h2 class="section-title">Dedikasi Penuh Untuk<br><em>Kesehatan Anda</em></h2>
+      <p class="section-sub">Serene Touch didirikan dengan misi sederhana namun mulia: membantu setiap tamu menemukan keseimbangan dan pemulihan melalui sentuhan yang penuh perhatian.</p>
+      <ul class="about-list">
+        <li>Terapis bersertifikat BNSP dengan pelatihan berkelanjutan</li>
+        <li>Menggunakan bahan alami premium berkualitas tinggi</li>
+        <li>Suasana tenang dan higienis untuk kenyamanan tamu</li>
+        <li>Teknik pijat tradisional Jawa, Bali, dan internasional</li>
+        <li>Konsultasi gratis sebelum setiap sesi</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 1rem;">
+      <div class="section-tag" style="display: inline-block;">✦ Tim Kami</div>
+      <h2 class="section-title">Terapis <em>Profesional</em> Kami</h2>
+    </div>
+    <div class="team-grid" id="team-display"></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="booking-wrapper">
+      <div class="booking-info">
+        <div class="section-tag">✦ Reservasi</div>
+        <h2 class="section-title">Buat <em>Janji</em> Anda<br>Sekarang</h2>
+        <p class="section-sub" style="margin-bottom: 2.5rem;">Pilih layanan dan waktu yang sesuai. Tim kami akan mengonfirmasi dalam 30 menit.</p>
+        <div class="info-card">
+          <div class="info-card-title">Informasi Kontak</div>
+          <div class="info-item" id="info-address"><span class="info-item-icon">📍</span> Jl. Gajahmada No. 45, Semarang Tengah</div>
+          <div class="info-item" id="info-phone"><span class="info-item-icon">📞</span> +62 822-1234-5678</div>
+          <div class="info-item" id="info-hours"><span class="info-item-icon">⏰</span><div><div>Senin–Jumat: 09:00–21:00</div><div>Sabtu: 09:00–21:00</div><div>Minggu: 10:00–19:00</div></div></div>
+          <div class="info-item" id="info-email"><span class="info-item-icon">📧</span> hello@serenetouch.id</div>
+        </div>
+      </div>
+      <div class="booking-form">
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--dark); margin-bottom:0.4rem;">Formulir Booking</h3>
+        <p style="font-size:0.82rem; color:var(--muted); margin-bottom:2rem;">Isi data di bawah, kami proses via WhatsApp.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-input" placeholder="Nama Anda" id="b-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">No. WhatsApp</label>
+            <input type="text" class="form-input" placeholder="+62 8xx-xxxx-xxxx" id="b-phone">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Pilih Layanan</label>
+          <select class="form-select" id="b-service"></select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Pilih Terapis</label>
+          <select class="form-select" id="b-therapist" onchange="updateTimeSlots()"></select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tanggal Kunjungan</label>
+          <input type="date" class="form-input" id="b-date" onchange="updateTimeSlots()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Pilih Jam</label>
+          <input type="hidden" id="b-time">
+          <div id="b-time-slots" class="time-slots-grid"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Catatan Tambahan</label>
+          <textarea class="form-textarea" placeholder="Kondisi kesehatan khusus, preferensi terapis, dll." id="b-note" style="min-height:80px;"></textarea>
+        </div>
+
+        <button class="btn-primary" style="width:100%; display:flex; align-items:center; justify-content:center; gap:0.6rem;" onclick="submitBooking()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pesan via WhatsApp
+        </button>
+        <p id="b-msg" style="text-align:center; margin-top:1rem; font-size:0.85rem; color:var(--gold); display:none;">✅ Booking tersimpan! Mengalihkan ke WhatsApp...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-tag" style="display:block; text-align:center;">✦ Testimoni</div>
+    <h2 class="section-title" style="text-align:center;">Kata Mereka <em>Tentang Kami</em></h2>
+    <div class="testi-grid" id="testi-display"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">Serene <span>Touch</span></div>
+      <p class="footer-desc">Layanan pijat premium yang menghadirkan kedamaian dan pemulihan untuk tubuh, pikiran, dan jiwa Anda di Semarang.</p>
+    </div>
+    <div>
+      <div class="footer-title">Layanan</div>
+      <ul class="footer-links" id="footer-services"></ul>
+    </div>
+    <div>
+      <div class="footer-title">Navigasi</div>
+      <ul class="footer-links">
+        <li><a href="#about">Tentang Kami</a></li>
+        <li><a href="#team">Tim Terapis</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#booking">Booking</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-title">Jam Operasional</div>
+      <ul class="footer-links">
+        <li id="footer-hours-weekday">Senin–Jumat: 09:00–21:00</li>
+        <li id="footer-hours-sat">Sabtu: 09:00–21:00</li>
+        <li id="footer-hours-sun">Minggu: 10:00–19:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Serene Touch. Hak Cipta Dilindungi.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="api.js"></script>
+</body>
+                                                                                                                                                  </html>
