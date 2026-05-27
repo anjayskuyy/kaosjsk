@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimbel Cosmos - Bimbingan Belajar Modern</title>
+    <title>Cosmos Bimbel - Platform Bimbingan Belajar Modern</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- STARS BACKGROUND -->
     <div class="stars-bg"></div>
     <div class="stars-bg stars-2"></div>
     <div class="stars-bg stars-3"></div>
-
-    <!-- FLOATING PLANETS -->
     <div class="planet planet-1"></div>
     <div class="planet planet-2"></div>
     <div class="planet planet-3"></div>
     <div class="planet planet-4"></div>
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <span class="rocket">🚀</span> Cosmos Bimbel
-            </div>
+            <div class="logo"><span class="rocket">🚀</span> Cosmos Bimbel</div>
             <ul class="nav-menu">
                 <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#tentang">Tentang</a></li>
                 <li><a href="#paket">Paket</a></li>
                 <li><a href="#guru">Guru</a></li>
                 <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#kontak">Kontak</a></li>
+                <li><a href="admin.html" class="nav-admin">Admin</a></li>
             </ul>
             <button class="nav-toggle">☰</button>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section id="beranda" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Jelajahi Galaksi <span class="highlight">Pendidikan</span></h1>
-            <p class="hero-subtitle">Platform bimbingan belajar modern dengan metode interaktif dan guru berpengalaman. Raih kesuksesan akademikmu bersama kami!</p>
+            <p class="hero-subtitle">Platform bimbingan belajar terdepan dengan teknologi AI, guru berpengalaman, dan metode pembelajaran yang terbukti efektif meningkatkan prestasi akademik.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary">Daftar Sekarang</button>
-                <button class="btn btn-secondary">Lihat Demo</button>
+                <button class="btn btn-primary" onclick="document.getElementById('modal-daftar').style.display='flex'">Daftar Gratis</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('#paket')">Lihat Paket</button>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>5000+</strong> Siswa Aktif</div>
+                <div class="hero-stat"><strong>250+</strong> Guru Profesional</div>
+                <div class="hero-stat"><strong>98%</strong> Kepuasan Pelanggan</div>
             </div>
         </div>
         <div class="hero-animation">
@@ -55,79 +57,40 @@
 
     <!-- STATS -->
     <section class="stats">
-        <div class="stat-item">
-            <h3>5000+</h3>
-            <p>Siswa Aktif</p>
-        </div>
-        <div class="stat-item">
-            <h3>250+</h3>
-            <p>Guru Berkualitas</p>
-        </div>
-        <div class="stat-item">
-            <h3>98%</h3>
-            <p>Kepuasan Siswa</p>
-        </div>
-        <div class="stat-item">
-            <h3>15+</h3>
-            <p>Tahun Pengalaman</p>
-        </div>
+        <div class="stat-item"><h3 data-target="5000">0</h3><p>Siswa Aktif</p></div>
+        <div class="stat-item"><h3 data-target="250">0</h3><p>Guru Berkualitas</p></div>
+        <div class="stat-item"><h3 data-target="50">0</h3><p>Mata Pelajaran</p></div>
+        <div class="stat-item"><h3 data-target="15">0</h3><p>Tahun Pengalaman</p></div>
     </section>
 
-    <!-- TENTANG SECTION -->
+    <!-- TENTANG -->
     <section id="tentang" class="tentang">
         <div class="container">
             <div class="section-header">
-                <h2>Mengapa Memilih <span class="highlight">Cosmos Bimbel?</span></h2>
-                <p>Kami menghadirkan solusi pendidikan terlengkap untuk semua jenjang</p>
+                <h2>Mengapa <span class="highlight">Cosmos Bimbel?</span></h2>
+                <p>Solusi pendidikan terlengkap untuk kesuksesan akademikmu</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌌</div>
-                    <h3>Metode Pembelajaran Modern</h3>
-                    <p>Menggunakan teknologi terkini dengan materi interaktif dan engaging</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍🏫</div>
-                    <h3>Guru Berpengalaman</h3>
-                    <p>Tim guru profesional yang tersertifikasi dan berdedikasi tinggi</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Akses 24/7</h3>
-                    <p>Belajar kapan saja, dimana saja melalui aplikasi mobile kami</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Target Terukur</h3>
-                    <p>Setiap siswa memiliki program pembelajaran yang disesuaikan</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Tracking Progress</h3>
-                    <p>Pantau perkembangan belajar dengan dashboard real-time</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Garansi Hasil</h3>
-                    <p>Jaminan peningkatan nilai akademik atau uang kembali 100%</p>
-                </div>
+                <div class="feature-card"><div class="feature-icon">🎓</div><h3>Kurikulum Terlengkap</h3><p>Mencakup SD hingga SMA dengan semua mata pelajaran utama dan pelajaran tambahan</p></div>
+                <div class="feature-card"><div class="feature-icon">👨‍🏫</div><h3>Guru Bersertifikat</h3><p>Tim guru profesional terlatih dengan pengalaman minimal 5 tahun di bidangnya</p></div>
+                <div class="feature-card"><div class="feature-icon">📱</div><h3>Akses 24/7</h3><p>Belajar kapan saja melalui web, mobile app, dan live session interaktif</p></div>
+                <div class="feature-card"><div class="feature-icon">🎯</div><h3>Target Terukur</h3><p>Program pembelajaran yang dipersonalisasi sesuai kebutuhan dan kecepatan belajar siswa</p></div>
+                <div class="feature-card"><div class="feature-icon">📊</div><h3>Progress Tracking</h3><p>Dashboard detail untuk memantau perkembangan akademik siswa secara real-time</p></div>
+                <div class="feature-card"><div class="feature-icon">🏆</div><h3>Garansi Hasil</h3><p>Jaminan peningkatan nilai atau uang kembali 100% dalam 3 bulan pertama</p></div>
             </div>
         </div>
     </section>
 
-    <!-- PAKET SECTION -->
+    <!-- PAKET -->
     <section id="paket" class="paket">
         <div class="container">
             <div class="section-header">
-                <h2>Pilih Paket <span class="highlight">Terbaik</span> Untukmu</h2>
+                <h2>Pilih Paket <span class="highlight">Terbaik</span></h2>
                 <p>Harga terjangkau dengan kualitas premium</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <p>Paket Dasar</p>
-                    </div>
+                    <h3>Starter</h3><p>Paket Pemula</p>
                     <div class="price">Rp 299K<span>/bulan</span></div>
                     <ul class="pricing-features">
                         <li>✓ 4 sesi per bulan</li>
@@ -136,15 +99,11 @@
                         <li>✓ Akses materi</li>
                         <li>✗ Konsultasi gratis</li>
                     </ul>
-                    <button class="btn btn-outline">Pilih Paket</button>
+                    <button class="btn btn-outline" onclick="pilihPaket('Starter')">Pilih</button>
                 </div>
-
                 <div class="pricing-card featured">
                     <div class="badge">POPULER</div>
-                    <div class="pricing-header">
-                        <h3>Professional</h3>
-                        <p>Paket Terlaris</p>
-                    </div>
+                    <h3>Professional</h3><p>Paket Terlaris</p>
                     <div class="price">Rp 599K<span>/bulan</span></div>
                     <ul class="pricing-features">
                         <li>✓ 8 sesi per bulan</li>
@@ -153,119 +112,91 @@
                         <li>✓ Akses materi lengkap</li>
                         <li>✓ Konsultasi gratis</li>
                     </ul>
-                    <button class="btn btn-primary">Pilih Paket</button>
+                    <button class="btn btn-primary" onclick="pilihPaket('Professional')">Pilih</button>
                 </div>
-
                 <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Premium</h3>
-                        <p>Paket Lengkap</p>
-                    </div>
+                    <h3>Premium</h3><p>Paket Lengkap</p>
                     <div class="price">Rp 999K<span>/bulan</span></div>
                     <ul class="pricing-features">
                         <li>✓ Unlimited sesi</li>
                         <li>✓ Semua mata pelajaran</li>
                         <li>✓ Guru prioritas</li>
                         <li>✓ Akses eksklusif</li>
-                        <li>✓ Konsultasi karir</li>
+                        <li>✓ Konsultasi karir lengkap</li>
                     </ul>
-                    <button class="btn btn-outline">Pilih Paket</button>
+                    <button class="btn btn-outline" onclick="pilihPaket('Premium')">Pilih</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GURU SECTION -->
+    <!-- GURU -->
     <section id="guru" class="guru">
         <div class="container">
             <div class="section-header">
                 <h2>Tim Guru <span class="highlight">Profesional</span></h2>
-                <p>Berpengalaman dan berdedikasi mengajar</p>
+                <p>Berpengalaman dan berdedikasi tinggi</p>
             </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">👨‍🎓</div>
-                    <h3>Pak Ahmad</h3>
-                    <p>Matematika & Fisika</p>
-                    <div class="team-stars">⭐⭐⭐⭐⭐</div>
-                    <span class="team-badge">18 tahun pengalaman</span>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">👩‍🎓</div>
-                    <h3>Ibu Siti</h3>
-                    <p>Bahasa Inggris & Bahasa Indonesia</p>
-                    <div class="team-stars">⭐⭐⭐⭐⭐</div>
-                    <span class="team-badge">15 tahun pengalaman</span>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">👨‍🎓</div>
-                    <h3>Pak Budi</h3>
-                    <p>Kimia & Biologi</p>
-                    <div class="team-stars">⭐⭐⭐⭐⭐</div>
-                    <span class="team-badge">12 tahun pengalaman</span>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">👩‍🎓</div>
-                    <h3>Ibu Dewi</h3>
-                    <p>IPA & Matematika SD</p>
-                    <div class="team-stars">⭐⭐⭐⭐⭐</div>
-                    <span class="team-badge">10 tahun pengalaman</span>
-                </div>
-            </div>
+            <div class="team-grid" id="team-grid"></div>
         </div>
     </section>
 
-    <!-- TESTIMONI SECTION -->
+    <!-- TESTIMONI -->
     <section id="testimoni" class="testimoni">
         <div class="container">
             <div class="section-header">
                 <h2>Apa Kata <span class="highlight">Mereka?</span></h2>
-                <p>Ribuan siswa telah merasakan manfaatnya</p>
+                <p>Ribuan siswa dan orang tua puas dengan layanan kami</p>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Cosmos Bimbel benar-benar mengubah cara saya belajar. Guru-gurunya sangat profesional dan metodenya sangat efektif. Nilai saya meningkat drastis!"</p>
-                    <div class="testimonial-author">
-                        <span class="author-avatar">👦</span>
-                        <div>
-                            <strong>Rafi, 16 tahun</strong>
-                            <small>Siswa SMA Unggulan</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Saya sangat puas dengan layanan Cosmos Bimbel. Anak saya jadi lebih semangat belajar dan nilainya terus meningkat setiap bulannya."</p>
-                    <div class="testimonial-author">
-                        <span class="author-avatar">👩</span>
-                        <div>
-                            <strong>Ibu Sinta, Orang Tua</strong>
-                            <small>Bekasi</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Akses 24/7 ke materi pembelajaran sangat membantu. Saya bisa belajar kapan saja sesuai jadwal saya. Sistem trackingnya juga sangat detail."</p>
-                    <div class="testimonial-author">
-                        <span class="author-avatar">👧</span>
-                        <div>
-                            <strong>Nisa, 14 tahun</strong>
-                            <small>Siswa SMP</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="testimonial-grid" id="testimonial-grid"></div>
         </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta">
+    <!-- BLOG -->
+    <section id="blog" class="blog">
         <div class="container">
-            <h2>Siap Untuk Jelajahi Galaksi Pendidikan?</h2>
-            <p>Daftarkan diri Anda sekarang dan dapatkan konsultasi gratis dengan guru pilihan</p>
-            <button class="btn btn-primary btn-lg">Mulai Perjalanan Belajarmu</button>
+            <div class="section-header">
+                <h2>Tips & Trik <span class="highlight">Belajar</span></h2>
+                <p>Artikel berguna untuk meningkatkan prestasi akademik</p>
+            </div>
+            <div class="blog-grid" id="blog-grid"></div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="kontak">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hubungi <span class="highlight">Kami</span></h2>
+                <p>Ada pertanyaan? Kami siap membantu</p>
+            </div>
+            <div class="kontak-wrapper">
+                <div class="kontak-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div><h4>Alamat</h4><p>Jl. Pendidikan No. 123, Jakarta Pusat, 12190</p></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div><h4>Telepon</h4><p>+62 812-3456-7890</p></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div><h4>Email</h4><p>info@cosmosbimbel.id</p></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div><h4>Jam Operasional</h4><p>Senin-Jumat: 09:00-20:00 WIB<br>Sabtu-Minggu: 10:00-18:00 WIB</p></div>
+                    </div>
+                </div>
+                <form class="kontak-form" onsubmit="kirimPesan(event)">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Nomor WhatsApp" required>
+                    <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -279,36 +210,46 @@
                 </div>
                 <div class="footer-section">
                     <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#beranda">Beranda</a></li>
-                        <li><a href="#tentang">Tentang</a></li>
-                        <li><a href="#paket">Paket</a></li>
-                        <li><a href="#guru">Guru</a></li>
-                    </ul>
+                    <ul><li><a href="#beranda">Beranda</a></li><li><a href="#tentang">Tentang</a></li><li><a href="#paket">Paket</a></li><li><a href="#guru">Guru</a></li></ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Kontak</h4>
-                    <ul>
-                        <li>📞 +62 812-3456-7890</li>
-                        <li>📧 info@cosmosbimbel.id</li>
-                        <li>📍 Jakarta, Indonesia</li>
-                    </ul>
+                    <h4>Produk</h4>
+                    <ul><li><a href="#">Bimbingan Online</a></li><li><a href="#">Materi Pembelajaran</a></li><li><a href="#">Simulasi Ujian</a></li><li><a href="#">Konsultasi Karir</a></li></ul>
                 </div>
                 <div class="footer-section">
                     <h4>Ikuti Kami</h4>
-                    <div class="social-links">
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Twitter</a>
-                    </div>
+                    <div class="social-links"><a href="#">Facebook</a> • <a href="#">Instagram</a> • <a href="#">TikTok</a> • <a href="#">YouTube</a></div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Cosmos Bimbel. Semua hak cipta dilindungi.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Cosmos Bimbel. All rights reserved.</p></div>
         </div>
     </footer>
 
+    <!-- MODAL DAFTAR -->
+    <div id="modal-daftar" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('modal-daftar').style.display='none'">&times;</span>
+            <h2>Daftar Sekarang</h2>
+            <form onsubmit="daftarSiswa(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="No. WhatsApp" required>
+                    <select required><option>-- Pilih Paket --</option><option>Starter</option><option>Professional</option><option>Premium</option></select>
+                </div>
+                <div class="form-row">
+                    <select required><option>-- Jenjang --</option><option>SD</option><option>SMP</option><option>SMA</option></select>
+                    <input type="text" placeholder="Asal Sekolah" required>
+                </div>
+                <textarea placeholder="Alasan memilih kami..." rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

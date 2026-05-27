@@ -1,44 +1,98 @@
-// Smooth scrolling and navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
+// FUNGSI HELPER
+function scrollToSection(selector) {
+    document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
+}
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 10px 30px rgba(99, 102, 241, 0.2)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-});
+function pilihPaket(paket) {
+    document.getElementById('modal-daftar').style.display = 'flex';
+}
 
-// Button click handlers
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function() {
-        if (this.classList.contains('btn-primary') || this.classList.contains('btn-lg')) {
-            alert('Terima kasih! Daftarkan dirimu sekarang melalui form di halaman pendaftaran.');
-            // Uncomment untuk redirect ke halaman pendaftaran
-            // window.location.href = '#daftar';
-        }
-    });
-});
+function daftarSiswa(e) {
+    e.preventDefault();
+    alert('Pendaftaran berhasil! Kami akan menghubungi Anda dalam 24 jam. Terima kasih telah memilih Cosmos Bimbel!');
+    document.getElementById('modal-daftar').style.display = 'none';
+    e.target.reset();
+}
 
-// Mobile menu toggle
-const navToggle = document.querySelector('.nav-toggle');
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        alert('Mobile menu akan diaktifkan di versi lengkap');
+function kirimPesan(e) {
+    e.preventDefault();
+    alert('Pesan Anda telah dikirim! Tim kami akan merespons dalam 1x24 jam.');
+    e.target.reset();
+}
+
+// RENDER GURU
+function renderTeam() {
+    const grid = document.getElementById('team-grid');
+    grid.innerHTML = guruData.map(guru => `
+        <div class="team-card">
+            <div class="team-avatar">${guru.avatar}</div>
+            <h3>${guru.name}</h3>
+            <p>${guru.subject}</p>
+            <div class="team-spec">${guru.experience} pengalaman</div>
+            <div class="team-stars">${'⭐'.repeat(Math.round(guru.rating))}</div>
+            <p style="font-size:0.85rem;color:var(--muted)">${guru.students}+ siswa</p>
+        </div>
+    `).join('');
+}
+
+// RENDER TESTIMONI
+function renderTestimonial() {
+    const grid = document.getElementById('testimonial-grid');
+    grid.innerHTML = testimonialData.map(testi => `
+        <div class="testimonial-card">
+            <div class="testimonial-stars">${'⭐'.repeat(testi.rating)}</div>
+            <p class="testimonial-text">"${testi.text}"</p>
+            <div class="testimonial-author">
+                <span class="author-avatar">${testi.avatar}</span>
+                <div>
+                    <strong>${testi.name}</strong>
+                    <small>${testi.school || testi.role}</small>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// RENDER BLOG
+function renderBlog() {
+    const grid = document.getElementById('blog-grid');
+    grid.innerHTML = blogData.map(blog => `
+        <div class="blog-card">
+            <div class="blog-header">
+                <div class="blog-category">${blog.category}</div>
+                <h4>${blog.title}</h4>
+            </div>
+            <div class="blog-body">
+                <p class="blog-excerpt">${blog.excerpt}</p>
+                <div class="blog-meta">
+                    <span>📅 ${blog.date}</span>
+                    <span>⏱️ ${blog.readTime}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// COUNTER ANIMATION
+function animateCounters() {
+    const stats = document.querySelectorAll('.stat-item h3');
+    stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 100;
+        const interval = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                stat.textContent = target.toLocaleString();
+                clearInterval(interval);
+            } else {
+                stat.textContent = Math.floor(current).toLocaleString();
+            }
+        }, 30);
     });
 }
 
-// Intersection Observer untuk animasi saat scroll
+// OBSERVER UNTUK ANIMASI SAAT SCROLL
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -53,15 +107,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe cards
-document.querySelectorAll('.feature-card, .pricing-card, .team-card, .testimonial-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.5s ease';
-    observer.observe(card);
-});
-
-// Parallax effect untuk planets
+// PARALLAX PLANETS
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     document.querySelectorAll('.planet').forEach((planet, index) => {
@@ -70,83 +116,51 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Counter animation untuk stats
-function animateCounter(element, target, duration = 2000) {
-    let current = 0;
-    const increment = target / (duration / 16);
-    
-    const counter = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(counter);
-        } else {
-            element.textContent = Math.floor(current);
+// NAVBAR SCROLL EFFECT
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 10px 30px rgba(99, 102, 241, 0.2)';
+    } else {
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// SMOOTH SCROLL LINKS
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
         }
-    }, 16);
-}
-
-// Trigger counter saat stats section terlihat
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statItems = document.querySelectorAll('.stat-item h3');
-            statItems.forEach(item => {
-                const text = item.textContent;
-                const number = parseInt(text);
-                if (!isNaN(number)) {
-                    animateCounter(item, number);
-                }
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const statsSection = document.querySelector('.stats');
-if (statsSection) {
-    statsObserver.observe(statsSection);
-}
-
-// Ripple effect untuk buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.style.position = 'absolute';
-        ripple.style.background = 'rgba(255, 255, 255, 0.5)';
-        ripple.style.borderRadius = '50%';
-        ripple.style.pointerEvents = 'none';
-        ripple.style.animation = 'ripple 0.6s ease-out';
-
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
     });
 });
 
-// Add ripple animation keyframes
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
+// CLOSE MODAL WHEN CLICKING OUTSIDE
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('modal-daftar');
+    if (e.target === modal) {
+        modal.style.display = 'none';
     }
-`;
-document.head.appendChild(style);
+});
 
-// Initialize
+// INIT
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 Cosmos Bimbel Landing Page Loaded!');
+    console.log('🚀 Cosmos Bimbel - Landing Page Loaded!');
+    renderTeam();
+    renderTestimonial();
+    renderBlog();
+    
+    // Trigger counter saat stats terlihat
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+        const obs = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounters();
+                obs.unobserve(statsSection);
+            }
+        }, { threshold: 0.5 });
+        obs.observe(statsSection);
+    }
 });
